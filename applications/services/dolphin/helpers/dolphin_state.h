@@ -5,6 +5,8 @@
 #include <stdint.h>
 #include <time.h>
 
+extern const size_t DOLPHIN_LEVEL_COUNT;
+
 typedef struct DolphinState DolphinState;
 typedef struct {
     uint8_t icounter_daily_limit[DolphinAppMAX];

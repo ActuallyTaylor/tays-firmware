@@ -37,26 +37,29 @@ static void input_callback(InputEvent* input, void* ctx) {
 static void render_callback(Canvas* canvas, void* ctx) {
     DolphinStats* stats = ctx;
 
-    char level_str[20];
+    char progress_str[20];
     char mood_str[32];
+    char name_str[20];
+
     uint8_t mood = 0;
 
     if(stats->butthurt <= 4) {
         mood = 0;
-        snprintf(mood_str, 20, "Mood: Happy");
+        snprintf(mood_str, 32, "Happy (%lu)", stats->butthurt);
     } else if(stats->butthurt <= 9) {
         mood = 1;
-        snprintf(mood_str, 20, "Mood: Ok");
+        snprintf(mood_str, 32, "Alright (%lu)", stats->butthurt);
     } else {
         mood = 2;
-        snprintf(mood_str, 20, "Mood: Angry");
+        snprintf(mood_str, 32, "Angry (%lu)", stats->butthurt);
     }
 
-    uint32_t xp_progress = 0;
     uint32_t xp_to_levelup = dolphin_state_xp_to_levelup(stats->icounter);
-    uint32_t xp_for_current_level =
-        xp_to_levelup + dolphin_state_xp_above_last_levelup(stats->icounter);
-    if(stats->level == 3) {
+    uint32_t xp_above_last_level = dolphin_state_xp_above_last_levelup(stats->icounter);
+    uint32_t xp_for_current_level = xp_to_levelup + xp_above_last_level;
+
+    uint32_t xp_progress = 0;
+    if(stats->level == DOLPHIN_LEVEL_COUNT) {
         xp_progress = 0;
     } else {
         xp_progress = xp_to_levelup * 64 / xp_for_current_level;
@@ -77,10 +80,13 @@ static void render_callback(Canvas* canvas, void* ctx) {
     canvas_draw_line(canvas, 58, 44, 123, 44);
 
     const char* my_name = furi_hal_version_get_name_ptr();
-    snprintf(level_str, 20, "Level: %hu", stats->level);
-    canvas_draw_str(canvas, 58, 12, my_name ? my_name : "Unknown");
+
+    snprintf(progress_str, 20, "%lu/%lu", xp_above_last_level, xp_for_current_level);
+    snprintf(name_str, 20, "%s (%hu)", my_name ? my_name : "Unknown", stats->level);
+
+    canvas_draw_str(canvas, 58, 12, name_str);
     canvas_draw_str(canvas, 58, 26, mood_str);
-    canvas_draw_str(canvas, 58, 40, level_str);
+    canvas_draw_str(canvas, 58, 40, progress_str);
 
     canvas_set_color(canvas, ColorWhite);
     canvas_draw_box(canvas, 123 - xp_progress, 47, xp_progress + 1, 6);

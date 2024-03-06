@@ -7,6 +7,14 @@ extern "C" {
 #endif
 
 typedef enum {
+    DolphinDeedDifficultyEasy,
+    DolphinDeedDifficultyMedium,
+    DolphinDeedDifficultyHard,
+    DolphinDeedDifficultyDeadly,
+    DolphinDeedDifficultyMAX
+} DolphinDeedDifficulty;
+
+typedef enum {
     DolphinAppSubGhz,
     DolphinAppRfid,
     DolphinAppNfc,
@@ -66,8 +74,8 @@ typedef enum {
 } DolphinDeed;
 
 typedef struct {
-    uint8_t icounter;
     DolphinApp app;
+    DolphinDeedDifficulty difficulty;
 } DolphinDeedWeight;
 
 typedef struct {
@@ -76,8 +84,8 @@ typedef struct {
 } DolphinDeedLimits;
 
 DolphinApp dolphin_deed_get_app(DolphinDeed deed);
-uint8_t dolphin_deed_get_app_limit(DolphinApp app);
-uint8_t dolphin_deed_get_weight(DolphinDeed deed);
+uint8_t dolphin_deed_get_app_limit(DolphinApp app, uint8_t level);
+uint8_t dolphin_deed_get_weight(DolphinDeed deed, uint8_t level);
 
 #ifdef __cplusplus
 }
