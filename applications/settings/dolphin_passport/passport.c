@@ -73,8 +73,7 @@ static void render_callback(Canvas* canvas, void* ctx) {
     canvas_draw_dot(canvas, 126, 1);
 
     // portrait
-    furi_assert((stats->level > 0) && (stats->level <= 3));
-    canvas_draw_icon(canvas, 9, 5, portraits[mood][stats->level - 1]);
+    canvas_draw_icon(canvas, 9, 5, portraits[mood][stats->level % 3]);
     canvas_draw_line(canvas, 58, 16, 123, 16);
     canvas_draw_line(canvas, 58, 30, 123, 30);
     canvas_draw_line(canvas, 58, 44, 123, 44);

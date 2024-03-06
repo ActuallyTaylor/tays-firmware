@@ -159,6 +159,8 @@ int32_t dolphin_srv(void* p) {
     dolphin_update_clear_limits_timer_period(dolphin);
     furi_timer_restart(dolphin->clear_limits_timer, HOURS_IN_TICKS(24));
 
+    dolphin->state->data.icounter = 300;
+
     DolphinEvent event;
     while(1) {
         if(furi_message_queue_get(dolphin->event_queue, &event, HOURS_IN_TICKS(1)) ==
