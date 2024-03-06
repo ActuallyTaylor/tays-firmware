@@ -1,48 +1,13 @@
-<h3 align="center">
-<a href="https://github.com/DarkFlippers/unleashed-firmware">
-<img src="https://user-images.githubusercontent.com/10697207/186202043-26947e28-b1cc-459a-8f20-ffcc7fc0c71c.png" align="center" alt="fzCUSTOM" border="0">
-</a>
-</h3>
-<div align="center" id="badges">
-	<a href="https://discord.unleashedflip.com">
-		<img src="https://img.shields.io/discord/937479784148115456?style=flat-square&logo=discord&label=Discord&color=%237289DA&link=https%3A%2F%2Fdiscord.unleashedflip.com%2F" alt="Discord server"/>
-	</a>
-	<a href="https://t.me/flipperzero_unofficial">
-		<img src="https://img.shields.io/endpoint?label=EN%20Channel&style=flat-square&url=https%3A%2F%2Fmogyo.ro%2Fquart-apis%2Ftgmembercount%3Fchat_id%3Dflipperzero_unofficial" alt="EN TG channel"/>
-	</a>
-	<a href="https://t.me/flipperzero_unofficial_ru">
-		<img src="https://img.shields.io/endpoint?label=RU%20Channel&style=flat-square&url=https%3A%2F%2Fmogyo.ro%2Fquart-apis%2Ftgmembercount%3Fchat_id%3Dflipperzero_unofficial_ru" alt="RU TG channel"/>	
-	</a>
-	<a href="https://t.me/flipperzero_unofficial_ua">
-		<img src="https://img.shields.io/endpoint?label=UA%20Channel&style=flat-square&url=https%3A%2F%2Fmogyo.ro%2Fquart-apis%2Ftgmembercount%3Fchat_id%3Dflipperzero_unofficial_ua" alt="UA TG channel"/>
-	</a>
-</div>
+### Welcome to Tay's Flipper Zero Firmware!
+#### **This firmware is a fork from** [DarkFlippers/unleashed-firmware](https://github.com/DarkFlippers/unleashed-firmware)
 
-### Welcome to the Flipper Zero Unleashed Firmware repo! 
-
-#### **This firmware is a fork from** [flipperdevices/flipperzero-firmware](https://github.com/flipperdevices/flipperzero-firmware)
-
-<br>
-
-### Most stable custom firmware focused on new features and improvements of original firmware components, with almost no UI changes
-
-<br>
-
-##### This software is for experimental purposes only and is not meant for any illegal activity/purposes. <br> We do not condone illegal activity and strongly encourage keeping transmissions to legal/valid uses allowed by law. <br> Also, this software is made without any support from Flipper Devices and is in no way related to the official devs. 
-
-
-<br>
-
-## FAQ (frequently asked questions)
-[Follow this link to find answers to most asked questions](https://github.com/DarkFlippers/unleashed-firmware/blob/dev/documentation/FAQ.md)
-
-## Dev builds (unstable)
-- https://dev.unleashedflip.com/
-- https://t.me/kotnehleb
-## Releases in Telegram
-- https://t.me/unleashed_fw
+##### This software is for experimental purposes only and is not meant for any illegal activity/purposes. <br> I do not condone illegal activity and strongly encourage keeping transmissions to legal/valid uses allowed by law. <br> Also, this software is made without any support from Flipper Devices and is in no way related to the official devs. 
 
 # What's changed
+## Tay's Version
+- [D&D style](https://roll20.net/compendium/dnd5e/Character%20Advancement#content) leveling system. Deed's and app limits scale with your Flipper's level.
+
+## Core Unleashed Firmware
 - **Sub-GHz** *lib & hal*
 	- Regional TX restrictions removed
 	- Extra Sub-GHz frequencies
