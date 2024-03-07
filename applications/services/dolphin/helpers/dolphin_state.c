@@ -176,6 +176,8 @@ void dolphin_state_on_deed(DolphinState* dolphin_state, DolphinDeed deed) {
     dolphin_state->data.timestamp = dolphin_state_timestamp();
     dolphin_state->dirty = true;
 
+    dolphin_state_save(dolphin_state);
+
     FURI_LOG_D(
         TAG,
         "icounter %lu, butthurt %ld",
