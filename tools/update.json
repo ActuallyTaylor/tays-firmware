@@ -1,0 +1,22 @@
+{
+    "channels":  [
+        {
+            "id": "nightly",
+            "title": "Development Channel",
+            "description": "Nightly builds (when there are changes), not yet tested.",
+            "versions": []
+        },
+        {
+            "id": "development",
+            "title": "Development Channel",
+            "description": "Latest builds, not yet tested completed",
+            "versions": []
+        },
+        {
+            "id": "release",
+            "title": "Stable Release Channe;",
+            "description": "Stable releases",
+            "versions": []
+        }
+    ]
+}
